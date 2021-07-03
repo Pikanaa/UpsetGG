@@ -99,10 +99,10 @@ for page in range(1,nbPages+1):
                         entrant{
                             name
                             seeds{
-                                seedNum
-                                progressionSource{
-                                    originPlacement
+                                phase{
+                                    phaseOrder
                                 }
+                                seedNum
                             }
                         }
                     }
@@ -128,7 +128,7 @@ for page in range(1,nbPages+1):
             name = player['entrant']['name']
             placement = player['placement']
             i = 0
-            while player['entrant']['seeds'][i]['progressionSource'] != None:
+            while player['entrant']['seeds'][i]['phase']['phaseOrder'] != 1:
                 i+=1
             seed = player['entrant']['seeds'][i]['seedNum']
             liste.append([name,seed,placement,0])
